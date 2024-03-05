@@ -28,39 +28,69 @@ class EmpleadorBRTest {
     }
 
     @Test
-    public void testSalSal1000Ei840(){
+    public void testSalNeto_01(){
         EmpleadorBR e = new EmpleadorBR();
         assertEquals(840, e.calculaSalarioNeto(e.setSalarioNeto((float) 1000)), 0.01);
     }
 
     // SEGONA TANDA
     @Test
-    public void testSal999_99Ei999_99(){
+    public void testSalNeto_02(){
         EmpleadorBR e = new EmpleadorBR();
         assertEquals(999.99, e.calculaSalarioNeto(e.setSalarioNeto((float) 999.99)), 0.01);
     }
 
     @Test
-    public void testSal500Ei500(){
+    public void testSalNeto_03(){
         EmpleadorBR e = new EmpleadorBR();
         assertEquals(500, e.calculaSalarioNeto(e.setSalarioNeto((float) 500)), 0.01);
     }
 
     @Test
-    public void testSal0Ei0(){
+    public void testSalNeto_04(){
         EmpleadorBR e = new EmpleadorBR();
         assertEquals(0, e.calculaSalarioNeto(e.setSalarioNeto((float) 0)), 0.01);
     }
 
     @Test
-    public void testSalMenos1EiMenos1(){
+    public void testSalNeto_05(){
         EmpleadorBR e = new EmpleadorBR();
         assertEquals(-1, e.calculaSalarioNeto(e.setSalarioNeto((float) -1)), 0.01);
     }
 
     @Test
-    public void testSalVen2000E8HEi1360(){
+    public void testSAlBruto_01(){
         EmpleadorBR e = new EmpleadorBR();
         assertEquals(1360, e.calculaSalarioBruto(TipoEmpleado.venedor, 2000, 8));
+    }
+
+    //TRECERA TANDA
+    @Test
+    public void testSAlBruto_02(){
+        EmpleadorBR e = new EmpleadorBR();
+        assertEquals(1260, e.calculaSalarioBruto(TipoEmpleado.venedor, 1500, 3));
+    }
+
+    @Test
+    public void testSAlBruto_03(){
+        EmpleadorBR e = new EmpleadorBR();
+        assertEquals(1100, e.calculaSalarioBruto(TipoEmpleado.venedor, 1499.99F, 0));
+    }
+    @Test
+    public void testSAlBruto_04(){
+        EmpleadorBR e = new EmpleadorBR();
+        assertEquals(1760, e.calculaSalarioBruto(TipoEmpleado.encarregat, 1250, 8));
+    }
+
+    @Test
+    public void testSalBruto_05(){
+        EmpleadorBR e = new EmpleadorBR();
+        assertEquals(1600, e.calculaSalarioBruto(TipoEmpleado.encarregat, 1000, 0));
+    }
+
+    @Test
+    public void testSalBruto_06(){
+        EmpleadorBR e = new EmpleadorBR();
+        assertEquals(1560, e.calculaSalarioBruto(TipoEmpleado.encarregat, 999.99F, 3));
     }
 }
