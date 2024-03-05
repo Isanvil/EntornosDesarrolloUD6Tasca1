@@ -93,4 +93,35 @@ class EmpleadorBRTest {
         EmpleadorBR e = new EmpleadorBR();
         assertEquals(1560, e.calculaSalarioBruto(TipoEmpleado.encarregat, 999.99F, 3));
     }
+
+    //QUARTA TANDA
+    @Test
+    public void testSalBruto_07(){
+        EmpleadorBR e = new EmpleadorBR();
+        assertEquals(1500, e.calculaSalarioBruto(TipoEmpleado.encarregat, 500, 0));
+    }
+
+    @Test
+    public void testSalBruto_08(){
+        EmpleadorBR e = new EmpleadorBR();
+        assertEquals(1660, e.calculaSalarioBruto(TipoEmpleado.encarregat, 0, 8));
+    }
+
+    @Test
+    public void testSalBruto_09(){
+        EmpleadorBR e = new EmpleadorBR();
+        assertEquals(-1, e.calculaSalarioBruto(TipoEmpleado.venedor, -1, 8));
+    }
+
+    @Test
+    public void testSalBruto_10(){
+        EmpleadorBR e = new EmpleadorBR();
+        assertEquals(-1, e.calculaSalarioBruto(TipoEmpleado.venedor, 1500, -1));
+    }
+
+    @Test
+    public void testSalBrutp_11(){
+        EmpleadorBR e = new EmpleadorBR();
+        assertEquals(-1, e.calculaSalarioBruto(null, 1500, 8));
+    }
 }
